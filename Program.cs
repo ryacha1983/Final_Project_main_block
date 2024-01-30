@@ -13,19 +13,31 @@ string [] CreateArrayString()
     return arraystring1;
 }
 
-string[] arraystring = CreateArrayString();
-string[] NewArraystring = new string[arraystring.Length];
-int j=0;
- 
+string [] RemoveStringNull(string[] tempArray, int k)
+{
+    string[] NewArray = new string[k];
+   for (int i= 0; i < k; i++) 
+{ 
+   NewArray[i]=tempArray[i];
+} 
+    return NewArray;
+}
 
+string[] arraystring = CreateArrayString();
+string[] TempArray = new string[arraystring.Length];
+int j=0;
 Console.WriteLine($"Новый массив:");
-for (int i = 0; i < NewArraystring.Length; i++) 
+
+for (int i = 0; i < TempArray.Length; i++) 
 { 
     if (arraystring[i].Length<4)
     {
-        NewArraystring[j] = arraystring[i];
-        Console.WriteLine($"   {NewArraystring[j]}");
+        TempArray[j] = arraystring[i];
         j+=1;
     }
 } 
 
+string[] NewArraystring = new string[j];
+NewArraystring = RemoveStringNull(TempArray, j);
+ Console.WriteLine($"[ {string.Join("; ",NewArraystring)}]");
+  
