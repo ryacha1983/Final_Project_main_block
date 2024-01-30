@@ -1,5 +1,5 @@
 ﻿
-string [] CreateAarayString()
+string [] CreateArrayString()
 {
     Console.Write($"Введите количество строк: ");
     int number = Convert.ToInt32(Console.ReadLine());
@@ -13,12 +13,13 @@ string [] CreateAarayString()
     return arraystring1;
 }
 
-string[] arraystring = CreateAarayString();
+string[] arraystring = CreateArrayString();
 string[] NewArraystring = new string[arraystring.Length];
 int j=0;
  
+
 Console.WriteLine($"Новый массив:");
-for (int i = 0; i < arraystring.Length; i++) 
+for (int i = 0; i < NewArraystring.Length; i++) 
 { 
     if (arraystring[i].Length<4)
     {
